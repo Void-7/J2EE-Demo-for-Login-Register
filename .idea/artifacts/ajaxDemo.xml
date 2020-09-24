@@ -1,0 +1,17 @@
+<component name="ArtifactManager">
+  <artifact type="war" build-on-make="true" name="ajaxDemo">
+    <output-path>$PROJECT_DIR$/out/artifacts/ajaxDemo</output-path>
+    <root id="archive" name="ajaxDemo.war">
+      <element id="javaee-facet-resources" facet="ajaxDemo/web/Web" />
+      <element id="directory" name="WEB-INF">
+        <element id="directory" name="classes">
+          <element id="module-output" name="ajaxDemo" />
+        </element>
+        <element id="directory" name="lib">
+          <element id="file-copy" path="$PROJECT_DIR$/../../JavaJDK/mysql-connector-java-8.0.11.jar" />
+          <element id="library" level="project" name="ojdbc8" />
+        </element>
+      </element>
+    </root>
+  </artifact>
+</component>
