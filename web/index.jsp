@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>热烈欢迎陈老师莅临登录！</title>
+  <title>热烈欢迎您莅临登录！</title>
   <link rel="stylesheet" href="style/style.css">
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.js"></script>
 </head>
