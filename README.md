@@ -16,10 +16,18 @@ Based on Servlet+JSP+MySQL with a UserId check ajax
 
 ![可注册截图](2.png)
 
+
+**[2020.9.26] 修改原来的按钮形状为圆角，加入缩放和发光CSS动画：**
+
+#### 按钮CSS动画（缩放、发光、颜色变幻）
+![登录按钮](4.png)
+
+![重置按钮](5.png)
+
 功能比较简单以作学习记录。
 
-IDE：IDEA 2020.2.1 ULTIMATE
+**IDE：IDEA 2020.2.1 ULTIMATE
 
 Server:Tomcat 8.5.57
 
-JDK:1.8
+JDK:1.8**
