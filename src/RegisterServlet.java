@@ -1,4 +1,5 @@
 import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.SQLException;
@@ -14,6 +15,7 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
         String id = request.getParameter("userId");
         String pw=request.getParameter("userPas");
         String pw2=request.getParameter("userPas2");
+        boolean flag=false;
         if(id.equals("")){
             printer.write("<script language='javascript'>alert('注册失败！账号不能为空！');window.location.href='Register.jsp';</script>");
         }else if(pw.equals("")||pw2.equals("")){
@@ -29,6 +31,7 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
                     if(db.getUser(id)!=null){
                         printer.write("<script language='javascript'>alert('error:0，注册失败！该id已存在,请重试！');window.location.href='Register.jsp';</script>");
                     }else{
+                        flag=true;
                         db.insert(id," ",pw);
                         printer.write("<script language='javascript'>alert('恭喜您，注册成功！');window.location.href='index.jsp';</script>");
                     }
@@ -44,6 +47,10 @@ public class RegisterServlet extends javax.servlet.http.HttpServlet {
                 printer.write("<script language='javascript'>alert('两次密码输入不一致，请重试。');window.location.href='Register.jsp';</script>");
             }
         }
+        HttpSession session=request.getSession();
+        if(!flag) session.setAttribute("id",id);//一旦注册失败就将id放入session
+        else session.removeAttribute("id");//注册成功就删除该信息
+
     }
 
     protected void doGet(javax.servlet.http.HttpServletRequest request, javax.servlet.http.HttpServletResponse response) throws javax.servlet.ServletException, IOException {

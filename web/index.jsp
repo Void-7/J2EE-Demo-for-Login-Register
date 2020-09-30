@@ -1,4 +1,7 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+  session.removeAttribute("id");
+%>
 <html lang="en">
 <head>
   <meta charset="UTF-8">

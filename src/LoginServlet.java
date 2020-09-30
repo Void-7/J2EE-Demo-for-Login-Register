@@ -13,6 +13,11 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
         String id=request.getParameter("userId");
         String pw=request.getParameter("userPas");
         System.out.println(id+" "+pw);//print id pw
+
+        //获取Session对象
+        HttpSession session=request.getSession();
+        session.removeAttribute("id");
+
         try {
             Database db=new Database("root","root");
             Userdata userdata = db.check(id,pw);
@@ -22,8 +27,6 @@ public class LoginServlet extends javax.servlet.http.HttpServlet {
                 printer.write("<script language='javascript'>alert('账号不存在或密码错误，请重试');window.location.href='index.jsp'</script>");
             }else{
                 printer.write("<script language='javascript'>alert('登录成功，欢迎您');window.location.href='Info.jsp';</script>");
-                //获取Session对象
-                HttpSession session=request.getSession();
                 //将属性写入Session域
                 //session.setAttribute("userName",userdata.getUserName());
                 session.setAttribute("userId",id);

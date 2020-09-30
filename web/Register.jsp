@@ -1,4 +1,9 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%
+    String _id="";
+    String id=(String)session.getAttribute("id");
+    if(id!=null) _id=id;
+%>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -36,7 +41,7 @@
     <h1>Sign Up🍦 </h1>
     <div class="txtb">
         <span id="span01"></span><br/>
-        <input id="id" type="text" name="userId">
+        <input id="id" type="text" name="userId" value="<%=_id%>">
         <span data-placeholder="User Id"></span>
     </div>
     <div class="txtb">
