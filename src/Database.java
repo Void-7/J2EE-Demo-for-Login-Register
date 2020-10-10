@@ -67,18 +67,11 @@ public class Database {
     }
 
     public static  void main(String[]args) throws SQLException, ClassNotFoundException {
-        Database db=new Database("root","root");
+        Database db = new Database("root", "root");
         System.out.println(db.connection);
         ArrayList<Userdata> userList = db.getAllUser();
-        for(Userdata x:userList){
-            System.out.println(x.getUserId()+" "+x.getUserName()+" "+x.getUserPas());
+        for (Userdata x : userList) {
+            System.out.println(x.getUserId() + " " + x.getUserName() + " " + x.getUserPas());
         }
-//
-//        Userdata userdata = db.check("161800002","breakingbad");
-//        if(userdata==null)  System.out.println("User id doesnt exist or wrong password");
-//        else System.out.println("Welcome "+userdata.getUserName()+"!");
-//        db.close();
-//        Userdata userdata=db.getUser("091801329");
-//        System.out.println(userdata.getUserName());
     }
 }
